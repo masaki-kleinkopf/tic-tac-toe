@@ -1,0 +1,44 @@
+*{
+  border:solid;
+}
+
+body {
+  background: green;
+  display:flex;
+  justify-content: space-between;
+  margin:0;
+  height:100vh;
+}
+
+section {
+  width:20%;
+  background:blue;
+  margin:none;
+  padding: 20px;
+}
+
+main{
+  width:50%;
+}
+
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
+.game-board{
+  display:grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  height: 60%;
+  width: 85%;
+  margin: auto;
+
+}
+
+div{
+
+}
