@@ -1,18 +1,21 @@
-*{
+/* *{
   border:solid;
-}
+  border-color: white;
+} */
 
 body {
-  background: green;
+  background: black;
   display:flex;
   justify-content: space-between;
   margin:0;
   height:100vh;
+  font-family: 'League Spartan', sans-serif;
+  color:white;
 }
 
 section {
   width:20%;
-  background:blue;
+  background: black;
   margin:none;
   padding: 20px;
 }
@@ -29,6 +32,10 @@ h2{
   text-align: center;
 }
 
+.gameboard, div{
+  border:2px solid rgba(255,255,255,0.90);
+}
+
 .game-board{
   display:grid;
   gap: 1px;
@@ -36,9 +43,9 @@ h2{
   height: 60%;
   width: 85%;
   margin: auto;
-
+  margin-top: 10%;
+  border: none;
 }
 
-div{
-
-}
+#D3870B
+#B0C4CA

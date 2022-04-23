@@ -1,31 +1,36 @@
 class Game {
   constructor(player1, player2){
-    this.playerX = new Player (player1);
-    this.playerO = new Player (player2);
+    this.player1 = new Player (player1,'x');
+    this.player2 = new Player (player2,'o');
     this.gameBoard = ['','','','','','','','',''];
-    this.currentPlayer = this.playerX.id;
+    this.currentPlayer = this.player1;
     this.turnsTaken = 0;
     this.winner = ''
     }
+
   checkForWin(player){
-    var trueFalse;
-    var winConditions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
-    loop1:
+    var winConditions = [
+      [0,1,2],
+      [3,4,5],
+      [6,7,8],
+      [0,3,6],
+      [1,4,7],
+      [2,5,8],
+      [0,4,8],
+      [2,4,6]
+    ];
     for (var i = 0; i < winConditions.length; i++) {
-      trueFalse = true;
-      loop2:
-      for (var j = 0; j < winConditions[i].length; j++){
-        if (this.gameBoard[winConditions[i][j]] !== player.id){
-          trueFalse = false;
-          break loop2;
-        }
-      }
-      if (trueFalse){
-        this.updateForWin(player)
-        return `win`
-      }
+      this.checkTiles(i, player, winConditions);
+    };
+  };
+
+  checkTiles(i, player, winConditions){
+    if (this.gameBoard[winConditions[i][0]] === player && this.gameBoard[winConditions[i][1]] === player && this.gameBoard[winConditions[i][2]] === player){
+      this.updateForWin(player)
+     return `winner`
     }
   }
+
   updateForWin(player){
       player.increaseWins();
       this.winner = player.id;
@@ -36,21 +41,27 @@ class Game {
     if (!this.gameBoard[gridNumber]){
       this.gameBoard.splice(gridNumber,1,this.currentPlayer);
     }
-    this.changeTurn();
     this.turnsTaken++;
-    this.checkForWin(this.playerX);
-    this.checkForWin(this.playerO);
+    this.changeTurn();
+    this.checkForWin(this.player1);
+    this.checkForWin(this.player2);
     this.checkForDraw();
   }
 
+  // takeTurn(0)
+  // takeTurn(3)
+  // takeTurn(1)
+  // takeTurn(4)
+  // takeTurn(2)
+
+
   changeTurn(){
-    if (this.currentPlayer === this.playerX.id){
-      this.currentPlayer = this.playerO.id
+    if (this.currentPlayer === this.player1){
+      this.currentPlayer = this.player2
     } else {
-      this.currentPlayer = this.playerX.id
+      this.currentPlayer = this.player1
     }
   }
-
 
   checkForDraw(){
     if (this.turnsTaken === 9 && !this.winner){
@@ -63,6 +74,8 @@ class Game {
   //   this.turnsTaken++
   // }
   resetGame(){
-    this.gameBoard = ['','','','','','','','','']
+    this.gameBoard = ['','','','','','','','',''];
+    this.turnsTaken = 0;
+    //this.winner = '';
   }
 }
