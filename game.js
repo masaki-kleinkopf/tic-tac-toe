@@ -20,16 +20,14 @@ class Game {
       [2,4,6]
     ];
     for (var i = 0; i < winConditions.length; i++) {
-      this.checkTiles(i, player, winConditions);
+      if (this.gameBoard[winConditions[i][0]] === player && this.gameBoard[winConditions[i][1]] === player && this.gameBoard[winConditions[i][2]] === player){
+        this.updateForWin(player)
+       return `winner`
+      }
     };
   };
 
-  checkTiles(i, player, winConditions){
-    if (this.gameBoard[winConditions[i][0]] === player && this.gameBoard[winConditions[i][1]] === player && this.gameBoard[winConditions[i][2]] === player){
-      this.updateForWin(player)
-     return `winner`
-    }
-  }
+  
 
   updateForWin(player){
       player.increaseWins();

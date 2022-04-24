@@ -4,12 +4,12 @@
 } */
 
 body {
-  background: black;
+  background: white;
   display:flex;
   justify-content: space-between;
   margin:0;
   height:100vh;
-  font-family: 'League Spartan', sans-serif;
+  font-family: 'Righteous', cursive;
   color:white;
 }
 
