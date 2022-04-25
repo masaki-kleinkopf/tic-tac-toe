@@ -5,23 +5,26 @@ var playerTwoScore = document.querySelector('.player-two-score')
 var currentPlayer = document.querySelector('.current-player')
 
 var game = new Game ('Player 1','Player 2')
-game.player1.token = './assets/146009.svg'
-game.player2.token = './assets/circle-15.svg'
+game.player1.token = `<img class='token' src='./assets/146009.svg'>`
+game.player2.token = `<img class='token' src='./assets/x-symbol-svgrepo-com.svg'>`
 
 gameGrid.addEventListener('click', placeTile)
 
 function placeTile (event){
-  game.takeTurn(parseInt(event.target.id))
-  showCurrentPlayer();
+  console.log(event.target)
+  if (event.target.id) {
+    game.takeTurn(parseInt(event.target.id))
+  }
   renderBoard();
+  showCurrentPlayer();
   checkWinOrDraw();
 };
 
 function showCurrentPlayer() {
   if (game.currentPlayer === game.player1){
-    currentPlayer.innerText = `PLAYER 1's TURN`
+    currentPlayer.innerHTML = `<div class='mini-token-container'>${game.player1.token}</div> TURN`
   } else {
-    currentPlayer.innerText = `PLAYER 2's TURN`
+    currentPlayer.innerHTML = `<div class='mini-token-container'>${game.player2.token}</div> TURN`
   }
 }
 
@@ -60,10 +63,10 @@ function renderBoard(){
     if (!game.gameBoard[i]){
       gameGrid.children[i].innerHTML = '';
     } else if (game.gameBoard[i] === game.player1){
-      gameGrid.children[i].innerHTML = 'x'
+      gameGrid.children[i].innerHTML = game.player1.token;
     } else if (game.gameBoard[i] === game.player2){
       console.log(gameGrid.children[i])
-      gameGrid.children[i].innerHTML = 'o'
+      gameGrid.children[i].innerHTML = game.player2.token;
     };
   };
 };

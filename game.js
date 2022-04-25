@@ -23,7 +23,6 @@ class Game {
     for (var i = 0; i < winConditions.length; i++) {
       if (this.gameBoard[winConditions[i][0]] === player && this.gameBoard[winConditions[i][1]] === player && this.gameBoard[winConditions[i][2]] === player){
         this.updateForWin(player)
-       return `winner`
       }
     };
   };
@@ -38,20 +37,13 @@ class Game {
   takeTurn(gridNumber){
     if (!this.gameBoard[gridNumber]){
       this.gameBoard.splice(gridNumber,1,this.currentPlayer);
+      this.turnsTaken++;
+      this.changeTurn();
+      this.checkForWin(this.player1);
+      this.checkForWin(this.player2);
+      this.checkForDraw();
     }
-    this.turnsTaken++;
-    this.changeTurn();
-    this.checkForWin(this.player1);
-    this.checkForWin(this.player2);
-    this.checkForDraw();
   }
-
-  // takeTurn(0)
-  // takeTurn(3)
-  // takeTurn(1)
-  // takeTurn(4)
-  // takeTurn(2)
-
 
   changeTurn(){
     if (this.currentPlayer === this.player1){
@@ -67,13 +59,10 @@ class Game {
     }
   }
 
-  //test in console
-  // for (var i = 0; i <gameBoard.length;i++){
-  //   this.turnsTaken++
-  // }
   resetGame(){
     this.gameBoard = ['','','','','','','','',''];
     this.turnsTaken = 0;
     this.winner = '';
+    this.draw = false;
   }
 }
