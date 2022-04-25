@@ -6,15 +6,17 @@
   <title>Tic-Tac-Toe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
   <section class='left-column'>
-    <img>
     <h2 class='player-one-score'>0 Wins</h2>
+    <div class = 'token-container'>
+      <img class='token' src='./assets/146009.svg' alt='O'>
+    </div>
   </section>
   <main class='main'>
-    <h1>it's player one's turn</h1>
+    <h1 class='current-player'>Tic-Tac-Toe</h1>
     <article class='game-board'>
       <div id='0'></div>
       <div id='1'></div>
@@ -27,9 +29,11 @@
       <div id='8'></div>
     </article>
   </main>
-  <section class='left-column'>
-    <img>
-    <h2 class='player-one-score'>0 Wins</h2>
+  <section class='right-column'>
+    <h2 class='player-two-score'>0 Wins</h2>
+    <div class = 'token-container'>
+      <img class='token' src='./assets/x-symbol-svgrepo-com.svg'>`
+    </div>
   </section>
 <script src='./player.js'></script>
 <script src='./game.js'></script>

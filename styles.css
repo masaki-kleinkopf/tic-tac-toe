@@ -9,7 +9,8 @@ body {
   justify-content: space-between;
   margin:0;
   height:100vh;
-  font-family: 'League Spartan', sans-serif;
+  width:100vw;
+  font-family: 'Righteous', cursive;
   color:white;
 }
 
@@ -32,20 +33,53 @@ h2{
   text-align: center;
 }
 
-.gameboard, div{
-  border:2px solid rgba(255,255,255,0.90);
-}
-
 .game-board{
   display:grid;
-  gap: 1px;
+  gap:1px;
   grid-template-columns: repeat(3, 1fr);
   height: 60%;
-  width: 85%;
+  width:60%;
   margin: auto;
   margin-top: 10%;
   border: none;
 }
+
+
+
+.token-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 23%;
+}
+
+ div{
+  border:1px solid rgba(255,255,255,0.90);
+  height:125px;
+  width:125px;
+  /* object-fit: cover; */
+}
+
+.game-board:nth-child(1),.game-board:nth-child(2),.game-board:nth-child(3),{
+  border-top:none;
+}
+
+ img{
+  /* object-fit: cover; */
+  max-width: 100%;
+  max-height: 100%;
+  filter: invert(23%) sepia(99%) saturate(6850%) hue-rotate(321deg) brightness(98%) contrast(108%);
+  align-items: center;
+  /* filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); */
+}
+
+.mini-token-container{
+  height: 10%;
+  width:10%;
+  padding-left:45%;
+}
+
+
 
 #D3870B
 #B0C4CA
