@@ -27,6 +27,8 @@ main{
 
 h1{
   text-align: center;
+  display:flex;
+  justify-content: center;
 }
 
 h2{
@@ -51,17 +53,33 @@ h2{
   justify-content: center;
   align-items: center;
   padding-left: 23%;
+  width:50%;
 }
 
- div{
+.game-board div{
   border:1px solid rgba(255,255,255,0.90);
   height:125px;
   width:125px;
-  /* object-fit: cover; */
 }
 
-.game-board:nth-child(1),.game-board:nth-child(2),.game-board:nth-child(3),{
+.game-board :nth-child(1),.game-board :nth-child(2),.game-board :nth-child(3){
   border-top:none;
+}
+
+.game-board :nth-child(1),.game-board :nth-child(4),.game-board :nth-child(7){
+  border-left:none;
+}
+
+.game-board :nth-child(7),.game-board :nth-child(8),.game-board :nth-child(9){
+  border-bottom:none;
+}
+
+.game-board :nth-child(3),.game-board :nth-child(6),.game-board :nth-child(9){
+  border-right:none;
+}
+
+.current-player{
+  text-align:center;
 }
 
  img{
@@ -77,6 +95,11 @@ h2{
   height: 10%;
   width:10%;
   padding-left:45%;
+}
+
+.winner-token-container{
+  height: 5%;
+  width:5%;
 }
 
 

@@ -43,18 +43,19 @@ function checkWinOrDraw() {
   }
 }
 function displayWinner(){
-  header.innerText = `${game.winner} wins`
+  header.innerHTML= `<div class='winner-token-container'>${game.winner.token}</div> wins`
 };
 
 function displayWins(){
-  playerOneScore.innerText = `${game.player1.wins} wins`
-  playerTwoScore.innerText = `${game.player2.wins} wins`
+  playerOneScore.innerHTML = `${game.player1.wins} wins`
+  playerTwoScore.innerHTML = `${game.player2.wins} wins`
 };
 
 function resetForWin(){
   gameGrid.style.pointerEvents = '';
   game.resetGame();
   renderBoard();
+  header.innerText = 'tic-tac-toe'
   showCurrentPlayer();
 };
 

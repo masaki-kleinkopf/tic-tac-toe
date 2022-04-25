@@ -1,7 +1,7 @@
 class Game {
   constructor(player1, player2){
-    this.player1 = new Player (player1,'x');
-    this.player2 = new Player (player2,'o');
+    this.player1 = new Player (player1,'o');
+    this.player2 = new Player (player2,'x');
     this.gameBoard = ['','','','','','','','',''];
     this.currentPlayer = this.player1;
     this.turnsTaken = 0;
@@ -27,11 +27,9 @@ class Game {
     };
   };
 
-
-
   updateForWin(player){
       player.increaseWins();
-      this.winner = player.id;
+      this.winner = player;
     }
 
   takeTurn(gridNumber){
