@@ -5,7 +5,8 @@ class Game {
     this.gameBoard = ['','','','','','','','',''];
     this.currentPlayer = this.player1;
     this.turnsTaken = 0;
-    this.winner = ''
+    this.winner = '';
+    this.draw = false;
     }
 
   checkForWin(player){
@@ -27,12 +28,11 @@ class Game {
     };
   };
 
-  
+
 
   updateForWin(player){
       player.increaseWins();
       this.winner = player.id;
-      this.resetGame();
     }
 
   takeTurn(gridNumber){
@@ -63,7 +63,7 @@ class Game {
 
   checkForDraw(){
     if (this.turnsTaken === 9 && !this.winner){
-      return `draw`
+      this.draw = true;
     }
   }
 
@@ -74,6 +74,6 @@ class Game {
   resetGame(){
     this.gameBoard = ['','','','','','','','',''];
     this.turnsTaken = 0;
-    //this.winner = '';
+    this.winner = '';
   }
 }
