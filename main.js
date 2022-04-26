@@ -1,57 +1,63 @@
 var gameGrid = document.querySelector('.game-board');
-var header = document.querySelector('h1')
-var playerOneScore = document.querySelector('.player-one-score')
-var playerTwoScore = document.querySelector('.player-two-score')
-var currentPlayer = document.querySelector('.current-player')
+var header = document.querySelector('h1');
+var playerOneScore = document.querySelector('.player-one-score');
+var playerTwoScore = document.querySelector('.player-two-score');
+var currentPlayer = document.querySelector('.current-player');
 
 var game = new Game ('Player 1','Player 2')
-game.player1.token = `<img class='token' src='./assets/146009.svg'>`
-game.player2.token = `<img class='token' src='./assets/x-symbol-svgrepo-com.svg'>`
+game.player1.token = `<img class='token' src='./assets/146009.svg' alt='o token'>`;
+game.player2.token = `<img class='token' src='./assets/x-symbol-svgrepo-com.svg' alt='x token'>`;
 
-gameGrid.addEventListener('click', placeTile)
+gameGrid.addEventListener('click', placeToken);
 
-function placeTile (event){
-  console.log(event.target)
+function placeToken (event){
   if (event.target.id) {
     game.takeTurn(parseInt(event.target.id))
-  }
+  };
   renderBoard();
   showCurrentPlayer();
   checkWinOrDraw();
 };
 
 function showCurrentPlayer() {
-  if (game.currentPlayer === game.player1){
+  if (game.currentPlayer === game.player1) {
     currentPlayer.innerHTML = `<div class='mini-token-container'>${game.player1.token}</div> TURN`
   } else {
     currentPlayer.innerHTML = `<div class='mini-token-container'>${game.player2.token}</div> TURN`
-  }
-}
+  };
+};
 
 function checkWinOrDraw() {
+  checkWin();
+  checkDraw();
+};
+
+function checkWin() {
   if (game.winner) {
     displayWinner();
     displayWins();
     gameGrid.style.pointerEvents = 'none';
     setTimeout(resetForWin, 2000)
   };
+};
+
+function checkDraw() {
   if (game.draw === true){
     header.innerText = `DRAW`
     gameGrid.style.pointerEvents = 'none';
     setTimeout(resetForWin, 2000);
-
-  }
-}
-function displayWinner(){
+  };
+};
+function displayWinner() {
   header.innerHTML= `<div class='winner-token-container'>${game.winner.token}</div> wins`
 };
 
-function displayWins(){
+function displayWins() {
   playerOneScore.innerHTML = `${game.player1.wins} wins`
   playerTwoScore.innerHTML = `${game.player2.wins} wins`
 };
 
-function resetForWin(){
+function resetForWin() {
   gameGrid.style.pointerEvents = '';
   game.resetGame();
   renderBoard();
@@ -59,14 +65,13 @@ function resetForWin(){
   showCurrentPlayer();
 };
 
-function renderBoard(){
-  for (var i = 0; i < game.gameBoard.length; i++){
-    if (!game.gameBoard[i]){
+function renderBoard() {
+  for (var i = 0; i < game.gameBoard.length; i++) {
+    if (!game.gameBoard[i]) {
       gameGrid.children[i].innerHTML = '';
-    } else if (game.gameBoard[i] === game.player1){
+    } else if (game.gameBoard[i] === game.player1) {
       gameGrid.children[i].innerHTML = game.player1.token;
-    } else if (game.gameBoard[i] === game.player2){
-      console.log(gameGrid.children[i])
+    } else if (game.gameBoard[i] === game.player2) {
       gameGrid.children[i].innerHTML = game.player2.token;
     };
   };

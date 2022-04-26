@@ -43,6 +43,7 @@ h2{
   width:60%;
   margin: auto;
   margin-top: 10%;
+  margin-left: 17%;
   border: none;
 }
 
@@ -52,18 +53,21 @@ h2{
   display:flex;
   justify-content: center;
   align-items: center;
-  padding-left: 23%;
+  padding-left: 26%;
   width:50%;
 }
 
 .game-board div{
   border:1px solid rgba(255,255,255,0.90);
-  height:125px;
-  width:125px;
+  height:18vh;
+  width:11vw;
+  display:flex;
+  justify-content: center;
 }
 
 .game-board :nth-child(1),.game-board :nth-child(2),.game-board :nth-child(3){
   border-top:none;
+  margin-bottom:-28%;
 }
 
 .game-board :nth-child(1),.game-board :nth-child(4),.game-board :nth-child(7){
@@ -72,6 +76,7 @@ h2{
 
 .game-board :nth-child(7),.game-board :nth-child(8),.game-board :nth-child(9){
   border-bottom:none;
+  margin-top:-28%;
 }
 
 .game-board :nth-child(3),.game-board :nth-child(6),.game-board :nth-child(9){
@@ -83,12 +88,9 @@ h2{
 }
 
  img{
-  /* object-fit: cover; */
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 95%;
+  max-height: 95%;
   filter: invert(23%) sepia(99%) saturate(6850%) hue-rotate(321deg) brightness(98%) contrast(108%);
-  align-items: center;
-  /* filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); */
 }
 
 .mini-token-container{
@@ -98,7 +100,7 @@ h2{
 }
 
 .winner-token-container{
-  height: 5%;
+  height:5%;
   width:5%;
 }
 
