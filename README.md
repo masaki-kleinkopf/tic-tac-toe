@@ -1,7 +1,7 @@
 # tic-tac-toe
 
 ## Introduction
-A sleek version of the classic game tic-tac-toe.
+A sleek version of the classic game, tic-tac-toe.
 
 
 ## Technologies
