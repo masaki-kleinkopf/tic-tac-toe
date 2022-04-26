@@ -14,12 +14,13 @@ A sleek version of the classic game tic-tac-toe.
 
 - Fully playable tic-tac-toe game. 
 - Show current turn beneath board.
-- On win, freeze board, show winner and update win count.
+- On win, freeze board briefly, show winner , update win count and reset gameboard. Losing player goes first for next game.
+- On draw, display draw, reset game, and swap starting player.
 
 ## Illustrations
 
-![gif]()
-![gif]()
+![gif](![tictactoegif](https://user-images.githubusercontent.com/97985027/165381952-666383aa-e7ba-49dc-814e-c66d3fd037b7.gif))
+
 
 
 ## Set Up
