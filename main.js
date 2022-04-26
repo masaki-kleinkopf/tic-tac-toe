@@ -1,10 +1,10 @@
+var currentPlayer = document.querySelector('.current-player');
 var gameGrid = document.querySelector('.game-board');
 var header = document.querySelector('h1');
 var playerOneScore = document.querySelector('.player-one-score');
 var playerTwoScore = document.querySelector('.player-two-score');
-var currentPlayer = document.querySelector('.current-player');
 
-var game = new Game ('Player 1','Player 2')
+var game = new Game ('Player 1','Player 2');
 game.player1.token = `<img class='token' src='./assets/146009.svg' alt='o token'>`;
 game.player2.token = `<img class='token' src='./assets/x-symbol-svgrepo-com.svg' alt='x token'>`;
 
@@ -37,7 +37,7 @@ function checkWin() {
     displayWinner();
     displayWins();
     gameGrid.style.pointerEvents = 'none';
-    setTimeout(resetForWin, 2000)
+    setTimeout(resetBoard, 2000);
   };
 };
 
@@ -45,23 +45,24 @@ function checkDraw() {
   if (game.draw === true){
     header.innerText = `DRAW`
     gameGrid.style.pointerEvents = 'none';
-    setTimeout(resetForWin, 2000);
+    setTimeout(resetBoard, 2000);
   };
 };
+
 function displayWinner() {
-  header.innerHTML= `<div class='winner-token-container'>${game.winner.token}</div> wins`
+  header.innerHTML= `<div class='winner-token-container'>${game.winner.token}</div> wins`;
 };
 
 function displayWins() {
-  playerOneScore.innerHTML = `${game.player1.wins} wins`
-  playerTwoScore.innerHTML = `${game.player2.wins} wins`
+  playerOneScore.innerHTML = `${game.player1.wins} wins`;
+  playerTwoScore.innerHTML = `${game.player2.wins} wins`;
 };
 
-function resetForWin() {
+function resetBoard() {
   gameGrid.style.pointerEvents = '';
   game.resetGame();
   renderBoard();
-  header.innerText = 'tic-tac-toe'
+  header.innerText = 'tic-tac-toe';
   showCurrentPlayer();
 };
 

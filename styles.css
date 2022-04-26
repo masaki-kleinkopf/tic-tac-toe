@@ -1,33 +1,28 @@
-/* *{
-  border:solid;
-  border-color: white;
-} */
-
 body {
   background: black;
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  margin:0;
-  height:100vh;
-  width:100vw;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
   font-family: 'Righteous', cursive;
-  color:white;
+  color: white;
 }
 
 section {
-  width:20%;
+  width: 20%;
   background: black;
-  margin:none;
+  margin: 0;
   padding: 20px;
 }
 
 main{
-  width:50%;
+  width: 50%;
 }
 
 h1{
   text-align: center;
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
@@ -36,55 +31,53 @@ h2{
 }
 
 .game-board{
-  display:grid;
-  gap:1px;
+  display: grid;
+  gap: 1px;
   grid-template-columns: repeat(3, 1fr);
   height: 60%;
-  width:60%;
+  width: 60%;
   margin: auto;
   margin-top: 10%;
   margin-left: 17%;
   border: none;
 }
 
-
-
 .token-container{
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 26%;
-  width:50%;
+  width: 50%;
 }
 
 .game-board div{
-  border:1px solid rgba(255,255,255,0.90);
-  height:18vh;
-  width:11vw;
-  display:flex;
+  border: 1px solid rgba(255,255,255,0.90);
+  height: 18vh;
+  width: 11vw;
+  display: flex;
   justify-content: center;
 }
 
 .game-board :nth-child(1),.game-board :nth-child(2),.game-board :nth-child(3){
-  border-top:none;
-  margin-bottom:-28%;
+  border-top: none;
+  margin-bottom: -28%;
 }
 
 .game-board :nth-child(1),.game-board :nth-child(4),.game-board :nth-child(7){
-  border-left:none;
+  border-left: none;
 }
 
 .game-board :nth-child(7),.game-board :nth-child(8),.game-board :nth-child(9){
-  border-bottom:none;
-  margin-top:-28%;
+  border-bottom: none;
+  margin-top: -28%;
 }
 
 .game-board :nth-child(3),.game-board :nth-child(6),.game-board :nth-child(9){
-  border-right:none;
+  border-right: none;
 }
 
 .current-player{
-  text-align:center;
+  text-align: center;
 }
 
  img{
@@ -95,16 +88,11 @@ h2{
 
 .mini-token-container{
   height: 10%;
-  width:10%;
-  padding-left:45%;
+  width: 10%;
+  padding-left: 45%;
 }
 
 .winner-token-container{
-  height:5%;
-  width:5%;
+  height: 5%;
+  width: 5%;
 }
-
-
-
-#D3870B
-#B0C4CA

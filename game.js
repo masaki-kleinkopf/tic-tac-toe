@@ -20,8 +20,9 @@ class Game {
       [0,4,8],
       [2,4,6]
     ];
+
     for (var i = 0; i < winConditions.length; i++) {
-      if (this.gameBoard[winConditions[i][0]] === player && this.gameBoard[winConditions[i][1]] === player && this.gameBoard[winConditions[i][2]] === player){
+      if (this.gameBoard[winConditions[i][0]] === player && this.gameBoard[winConditions[i][1]] === player && this.gameBoard[winConditions[i][2]] === player) {
         this.updateForWin(player)
       };
     };
@@ -32,7 +33,7 @@ class Game {
       this.winner = player;
     };
 
-  takeTurn(gridNumber){
+  takeTurn(gridNumber) {
     if (!this.gameBoard[gridNumber]){
       this.gameBoard.splice(gridNumber,1,this.currentPlayer);
       this.turnsTaken++;
@@ -43,7 +44,7 @@ class Game {
     };
   };
 
-  changeTurn(){
+  changeTurn() {
     if (this.currentPlayer === this.player1){
       this.currentPlayer = this.player2
     } else {
@@ -51,16 +52,16 @@ class Game {
     };
   };
 
-  checkForDraw(){
+  checkForDraw() {
     if (this.turnsTaken === 9 && !this.winner){
       this.draw = true;
     };
   };
 
-  resetGame(){
+  resetGame() {
     this.gameBoard = ['','','','','','','','',''];
     this.turnsTaken = 0;
     this.winner = '';
     this.draw = false;
-  }
-}
+  };
+};
