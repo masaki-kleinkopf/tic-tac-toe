@@ -19,7 +19,7 @@ A sleek version of the classic game tic-tac-toe.
 
 ## Illustrations
 
-![gif](![tictactoegif](https://user-images.githubusercontent.com/97985027/165381952-666383aa-e7ba-49dc-814e-c66d3fd037b7.gif))
+![tictactoegif](https://user-images.githubusercontent.com/97985027/165381952-666383aa-e7ba-49dc-814e-c66d3fd037b7.gif)
 
 
 
